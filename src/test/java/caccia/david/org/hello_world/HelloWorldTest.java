@@ -1,10 +1,12 @@
 package caccia.david.org.hello_world;
 
+import org.testng.annotations.Test;
+
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class HelloWorldTest {
 
-    @org.testng.annotations.Test
+    @Test
     public void testGreet() {
         final String greeter = "Jan";
         HelloWorld hw = new HelloWorld(greeter);

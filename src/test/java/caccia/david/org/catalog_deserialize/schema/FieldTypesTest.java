@@ -1,10 +1,8 @@
 package caccia.david.org.catalog_deserialize.schema;
 
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.testng.Assert.*;
 
 public class FieldTypesTest {
 
@@ -13,7 +11,7 @@ public class FieldTypesTest {
     public void testParseString()
     {
         String input = " Hello ";
-        String output = (String)FieldTypes.String.parse(input);
+        String output = (String)FieldTypes.Text.parse(input);
         assertThat(output).isEqualTo("Hello");
     }
 

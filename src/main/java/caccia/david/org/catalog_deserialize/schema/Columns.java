@@ -1,35 +1,49 @@
 package caccia.david.org.catalog_deserialize.schema;
 
-import javax.xml.stream.events.EndDocument;
 
-public enum Columns implements GetType
+public enum Columns implements Parse
 {
-    Start
+    Start(Integer.class)
             {
                 @Override
-                public Class getType() {
-                    return Integer.class;
+                public Integer parse(String token) {
+                    return (Integer) FieldTypes.Number.parse(token);
                 }
             },
-    End
+    End(Integer.class)
             {
                 @Override
-                public Class getType() {
-                    return Integer.class;
+                public Integer parse(String token) {
+                    return (Integer) FieldTypes.Number.parse(token);
                 }
             },
-    Name
+    Name(String.class)
             {
                 @Override
-                public Class getType() {
-                    return String.class;
+                public String parse(String token) {
+                    return (String) FieldTypes.Text.parse(token);
                 }
             },
-    Type
+    Type(FieldTypes.class)
             {
                 @Override
-                public Class getType() {
-                    return FieldTypes.class;
+                public FieldTypes parse(String token) {
+                    return FieldTypes.valueOf(token);
                 }
             };
+
+    private final Class columnClass;
+
+    Columns(Class enumsClass)
+    {
+        columnClass = enumsClass;
+    }
+
+    Class getColumnClass()
+    {
+        return columnClass;
+    }
+
+
+
 }

@@ -5,29 +5,36 @@ public enum FieldTypes implements Parse
     Number
             {
                 @Override
-                public Object parse(String input) {
+                public Integer parse(String input) {
                     return Integer.parseInt(input);
                 }
             },
-    String
+    Text
             {
                 @Override
-                public Object parse(java.lang.String input) {
+                public String parse(java.lang.String input) {
                     return input.trim();
                 }
             },
     Currency
             {
                 @Override
-                public Object parse(java.lang.String input) {
+                public String parse(java.lang.String input) {
                     Integer number = Integer.parseInt(input);
-                    return 1.0*number/100.0;
+                    Double dc = 1.0*number/100.0;
+                    boolean negative = dc < 0;
+                    if(negative)
+                    {
+                        dc = -1*dc;
+                    }
+                    String price = String.format("%d",dc);
+                    return price;
                 }
             },
     Flags
             {
                 @Override
-                public Object parse(java.lang.String input) {
+                public Boolean[] parse(java.lang.String input) {
                     Boolean[] flags = new Boolean[input.length()];
                     int ix = 0;
                     for(char flag: input.toCharArray())

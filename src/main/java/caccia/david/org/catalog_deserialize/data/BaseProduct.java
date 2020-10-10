@@ -10,7 +10,7 @@ public class BaseProduct {
     private String displayPromoPrice;
     private Double calculatorPromoPrice; // 4 decimal places
     private Units unit;
-    private Double size;
+    private String size;
     private Double taxRate;
 
     public int getId() {
@@ -69,11 +69,11 @@ public class BaseProduct {
         this.unit = unit;
     }
 
-    public Double getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Double size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

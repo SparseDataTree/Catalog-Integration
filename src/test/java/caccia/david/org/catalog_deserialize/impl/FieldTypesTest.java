@@ -1,5 +1,6 @@
-package caccia.david.org.catalog_deserialize.schema;
+package caccia.david.org.catalog_deserialize.impl;
 
+import caccia.david.org.catalog_deserialize.impl.FieldTypes;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
@@ -11,7 +12,7 @@ public class FieldTypesTest {
     public void testParseString()
     {
         String input = " Hello ";
-        String output = (String)FieldTypes.Text.parse(input);
+        String output = (String) FieldTypes.Text.parse(input);
         assertThat(output).isEqualTo("Hello");
     }
 
@@ -26,25 +27,25 @@ public class FieldTypesTest {
     @Test
     public void testParseCurrency()
     {
-        String numberIn = "00123";
-        Double numberOut = (Double)FieldTypes.Currency.parse(numberIn);
-        assertThat(numberOut).isEqualTo(1.23);
+        String numberIn = "000000123";
+        String numberOut = (String)FieldTypes.Currency.parse(numberIn);
+        assertThat(numberOut).isEqualTo("$1.23");
     }
 
     @Test
     public void testParseNegativeCurrency()
     {
-        String numberIn = "-00123";
-        Double numberOut = (Double)FieldTypes.Currency.parse(numberIn);
-        assertThat(numberOut).isEqualTo(-1.23);
+        String numberIn = "-00000123";
+        String numberOut = (String)FieldTypes.Currency.parse(numberIn);
+        assertThat(numberOut).isEqualTo("-$1.23");
     }
 
     @Test
     public void testParseFlags()
     {
-        String flagsIn = "YYYNNY";
+        String flagsIn = "YYYNNYNNN";
         Boolean[] flags = (Boolean[])FieldTypes.Flags.parse(flagsIn);
-        assertThat(flags.length).isEqualTo(6);
+        assertThat(flags.length).isEqualTo(9);
         assertThat(flags[0]).isTrue();
         assertThat(flags[4]).isFalse();
     }

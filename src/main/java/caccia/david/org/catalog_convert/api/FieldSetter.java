@@ -1,4 +1,4 @@
-package caccia.david.org.catalog_deserialize.api;
+package caccia.david.org.catalog_convert.api;
 
 public interface FieldSetter<T> {
 

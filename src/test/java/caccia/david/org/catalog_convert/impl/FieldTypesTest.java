@@ -1,6 +1,5 @@
-package caccia.david.org.catalog_deserialize.impl;
+package caccia.david.org.catalog_convert.impl;
 
-import caccia.david.org.catalog_deserialize.impl.FieldTypes;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;

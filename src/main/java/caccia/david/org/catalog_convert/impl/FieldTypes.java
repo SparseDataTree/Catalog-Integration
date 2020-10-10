@@ -1,6 +1,6 @@
-package caccia.david.org.catalog_deserialize.impl;
+package caccia.david.org.catalog_convert.impl;
 
-import caccia.david.org.catalog_deserialize.api.Parse;
+import caccia.david.org.catalog_convert.api.Parse;
 
 public enum FieldTypes implements Parse
 {

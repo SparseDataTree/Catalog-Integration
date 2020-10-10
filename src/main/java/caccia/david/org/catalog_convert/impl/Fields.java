@@ -1,8 +1,8 @@
-package caccia.david.org.catalog_deserialize.impl;
+package caccia.david.org.catalog_convert.impl;
 
-import caccia.david.org.catalog_deserialize.api.FieldSetter;
-import caccia.david.org.catalog_deserialize.data.BaseProduct;
-import caccia.david.org.catalog_deserialize.data.Units;
+import caccia.david.org.catalog_convert.api.FieldSetter;
+import caccia.david.org.catalog_convert.data.BaseProduct;
+import caccia.david.org.catalog_convert.data.Units;
 
 public enum Fields implements FieldSetter<BaseProduct>
 {
@@ -118,11 +118,11 @@ public enum Fields implements FieldSetter<BaseProduct>
             }
             if(flags[4])
             {
-                baseProduct.setTaxRate(1.07775);
+                baseProduct.setTaxRate(7.775);
             }
             else
             {
-                baseProduct.setTaxRate(1.0);
+                baseProduct.setTaxRate(0.0);
             }
         }
     },

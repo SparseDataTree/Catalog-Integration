@@ -1,6 +1,6 @@
-package caccia.david.org.catalog_deserialize.data;
+package caccia.david.org.catalog_convert.data;
 
-public class BaseProduct {
+public class BaseProduct extends ValidBase{
 
     // todo consider which should be final, private, etc.
     private int id;
@@ -11,7 +11,8 @@ public class BaseProduct {
     private Double calculatorPromoPrice; // 4 decimal places
     private Units unit;
     private String size;
-    private Double taxRate;
+    private String taxRate;
+    private Double taxFactor;
 
     public int getId() {
         return id;
@@ -77,11 +78,17 @@ public class BaseProduct {
         this.size = size;
     }
 
-    public Double getTaxRate() {
+    public String getTaxRate() {
         return taxRate;
     }
 
     public void setTaxRate(Double taxRate) {
-        this.taxRate = taxRate;
+        this.taxRate = String.format("%.3f%%",taxRate);
+        this.taxFactor = 1.0 + taxRate/100.0;
+    }
+
+    public Double getTaxFactor()
+    {
+        return taxFactor;
     }
 }

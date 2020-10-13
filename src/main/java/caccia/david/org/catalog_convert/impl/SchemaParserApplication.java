@@ -1,6 +1,7 @@
 package caccia.david.org.catalog_convert.impl;
 
 import caccia.david.org.catalog_convert.data.BaseProduct;
+import caccia.david.org.catalog_convert.data.ProductReporter;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -30,11 +31,13 @@ public class SchemaParserApplication
         System.out.println(String.format("   Number of product objects: %d",products.size()));
         if(products.size() > 0)
         {
-            System.out.println("   IDs");
+            System.out.println("   IDs        Description                  Display-$       Calc-$        Promo-$       Promo-calc-$   Tax     Size       Unit");
+            System.out.println("-----------------------------------------------------------------------------------------------------------------------------");
         }
+        ProductReporter reporter = new ProductReporter();
         for(BaseProduct product: products)
         {
-            System.out.println(String.format("   %d",product.getId()));
+            reporter.report(product);
         }
         System.out.println("");
     }

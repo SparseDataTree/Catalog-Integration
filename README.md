@@ -22,7 +22,7 @@
         
 
        
-## Link to CICD locations
+## CICD integration
 // todo
 
 ## Overview of project

@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 public class SchemaParserApplication
 {
-    SchemaParserManager parserManager = new SchemaParserManager();
+    ProductFieldParserManager parserManager = new ProductFieldParserManager();
 
     private void convert(String filePath)
     {

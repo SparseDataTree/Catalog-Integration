@@ -1,12 +1,12 @@
 package caccia.david.org.catalog_convert.example_extension;
 
 import caccia.david.org.catalog_convert.api.FieldSetter;
-import caccia.david.org.catalog_convert.api.SchemaParser;
-import caccia.david.org.catalog_convert.impl.StringSchemaParser;
+import caccia.david.org.catalog_convert.api.ProductFieldParser;
+import caccia.david.org.catalog_convert.impl.StringProductFieldParser;
 
-public class ExtendedSchemaParser implements SchemaParser<ExtendedProduct>
+public class ExtendedProductFieldParser implements ProductFieldParser<ExtendedProduct>
 {
-    StringSchemaParser parent = new StringSchemaParser();
+    StringProductFieldParser parent = new StringProductFieldParser();
     @Override
     public void configureEndpoint(ExtendedProduct extendedProduct, String line)
     {

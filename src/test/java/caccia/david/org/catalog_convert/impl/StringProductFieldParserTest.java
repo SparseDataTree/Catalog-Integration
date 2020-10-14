@@ -8,7 +8,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 
-public class StringSchemaParserTest
+public class StringProductFieldParserTest
 {
     static final String VALID_LINE_1 = "80000001 Kimchi-flavored white rice                                  00000567 00000000 00000000 00000000 00000000 00000000 NNNNNNNNN      18oz";
     static final String VALID_LINE_2 = "14963801 Generic Soda 12-pack                                        00000000 00000549 00001300 00000000 00000002 00000000 NNNNYNNNN   12x12oz";
@@ -40,7 +40,7 @@ public class StringSchemaParserTest
     @Test(dataProvider = "validLines")
     public void testValid(String line)
     {
-        StringSchemaParser parser = new StringSchemaParser();
+        StringProductFieldParser parser = new StringProductFieldParser();
         BaseProduct baseProduct = new BaseProduct();
         parser.configureEndpoint(baseProduct, line);
         assertThat(baseProduct.isValid()).isTrue();
@@ -51,7 +51,7 @@ public class StringSchemaParserTest
     @Test
     public void testConfigureEndpoint()
     {
-        StringSchemaParser parser = new StringSchemaParser();
+        StringProductFieldParser parser = new StringProductFieldParser();
         BaseProduct baseProduct = new BaseProduct();
         parser.configureEndpoint(baseProduct, VALID_LINE_1);
         assertSoftly(softly ->
@@ -73,7 +73,7 @@ public class StringSchemaParserTest
     @Test
     public void testConfigureEndpointInvalid()
     {
-        StringSchemaParser parser = new StringSchemaParser();
+        StringProductFieldParser parser = new StringProductFieldParser();
         BaseProduct baseProduct = new BaseProduct();
         parser.configureEndpoint(baseProduct, invalidLine);
         assertThat(baseProduct.isValid()).isFalse();

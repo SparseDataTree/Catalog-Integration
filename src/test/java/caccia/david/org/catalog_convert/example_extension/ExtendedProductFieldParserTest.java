@@ -1,20 +1,17 @@
 package caccia.david.org.catalog_convert.example_extension;
 
-import caccia.david.org.catalog_convert.data.BaseProduct;
-import caccia.david.org.catalog_convert.impl.StringSchemaParser;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.testng.Assert.*;
 
-public class ExtendedSchemaParserTest
+public class ExtendedProductFieldParserTest
 {
     static final String VALID_LINE = "80000001 Kimchi-flavored white rice                                  00000567 00000000 00000000 00000000 00000000 00000000 NNNNNNNNN      18oz usa-wa-sea-*         2020-10-11 2020-10-18";
 
     @Test
     public void testConfigureEndpoint()
     {
-        ExtendedSchemaParser parser = new ExtendedSchemaParser();
+        ExtendedProductFieldParser parser = new ExtendedProductFieldParser();
         ExtendedProduct extendedProduct = new ExtendedProduct();
         parser.configureEndpoint(extendedProduct, VALID_LINE);
         assertSoftly(softly ->

@@ -6,9 +6,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SchemaParserManager
+public class ProductFieldParserManager
 {
-    StringSchemaParser schemaParser = new StringSchemaParser();
+    StringProductFieldParser schemaParser = new StringProductFieldParser();
     private final List<BaseProduct> products = new LinkedList<>();
 
     public void manageParsing(Iterator<String> lineStream )

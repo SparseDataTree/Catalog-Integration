@@ -2,7 +2,6 @@ package caccia.david.org.catalog_convert.example_extension;
 
 import caccia.david.org.catalog_convert.api.Parse;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

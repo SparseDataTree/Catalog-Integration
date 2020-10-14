@@ -23,7 +23,7 @@
 
        
 ## CICD integration
-// todo  The idea is that Github / CICD integration can be confirmed by committing a change to the 'main' repo branch.  This change is detected by the CICD service (for example, TeamCity).  The change triggers TeamCity to build the project.  Pending... TeamCity then sends information back to github with information about the latest build.
+// todo  The idea is that Github / CICD integration can be confirmed by committing a change to the 'main' repo branch.  This change is detected by the CICD service (for example, TeamCity).  The change triggers TeamCity to build the project.  Pending... TeamCity then sends information back to github with information about the latest build.  Confirm that a pull request triggers a build in CICD (TeamCity).
 
 ## Overview of project
 Basic Requirements:

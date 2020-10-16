@@ -23,7 +23,9 @@
 
        
 ## CICD integration
-// todo  The idea is that Github / CICD integration can be confirmed by committing a change to the 'main' repo branch.  This change is detected by the CICD service (for example, TeamCity).  The change triggers TeamCity to build the project.  Pending... TeamCity then sends information back to github with information about the latest build.  Confirm that a pull request triggers a build in CICD (TeamCity). Maybe?
+I installed Teamcity on my local box and configured it to build this project upon checkins to the main branch.  
+![Build screen in Teamcity](https://github.com/SparseDataTree/Catalog-Integration/blob/main/src/main/resources/images/Screenshot%20from%202020-10-15%2019-53-29.png)
+
 
 ## Overview of project
 Basic Requirements:

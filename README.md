@@ -62,13 +62,16 @@ The application itself is mainly to demonstrate the implementation; so I was not
 
 There are two main sets of interfaces supporting the core:
 1.  Interfaces supporting conversion of lines into product fields.  These are:
-   a. Extractor - implemented by StringExtractor class to pull out Substring specified by location
-   b. Parse - implemented by FieldTypes enum to convert substrings (in this case from a StringExtractor to a specific Java type)
-   c. FieldSetter - implemented by Fields enum to leverage the preceeding functionality to create product fields.
+   
+      a. **Extractor** - implemented by StringExtractor class to pull out Substring specified by location
+   
+    b. **Parse** - implemented by FieldTypes enum to convert substrings (in this case from a StringExtractor to a specific Java type)
+  
+    c. **FieldSetter** - implemented by Fields enum to leverage the preceeding functionality to create product fields.
 
 2. Interface supporting conversion of lines into product objects
 
-* ProductFieldParser is implemented by StringProductFieldParser class to convert schema-lines into product objects.
+   * **ProductFieldParser** is implemented by StringProductFieldParser class to convert schema-lines into product objects.
 
 For our demo application, the StringProductFieldParser class is used by the ProductFieldParserManager class to process an iteration of lines into a list of product instances
 ### Extension Example
@@ -77,7 +80,7 @@ While I did not expose such an extension in the application, I did implement one
 This extension added to the line schema; created an extended product object that inherits from the base product and added to the product fields and added a new field type "Date".
 The extensions continue to use enums.
 
-In the extendedProductFieldParser, I chose to leverage the base StringProductFieldParser via composition; as it more cleanly resolved parameter typing.
+In the ExtendedProductFieldParser, I chose to leverage the base StringProductFieldParser via composition; as it more cleanly resolved parameter typing.
 
 
 ### Tests
